@@ -5,12 +5,15 @@ public class GameManager : MonoBehaviour {
 
     //Game manager static instance, use this for persistent management
     public static GameManager Instance;
+    public bool debug = false;
+
+    public Player player;
 
 	// Use this for initialization
-	void Start () {
-        if (GameManager.Instance = null)
-        {
-            GameManager.Instance = this;
+	void Awake () {
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(this);
         }
 	}
 	
