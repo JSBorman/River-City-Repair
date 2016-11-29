@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Pickup : WorldObject {
-
-    Renderer r;
-    float outlineWidth=.02f;
+public class Pickup : InteractableObject {
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +10,6 @@ public class Pickup : WorldObject {
 
     public override void Init() {
         base.Init();
-        r = GetComponent<Renderer>();
     }
 	
 	// Update is called once per frame
@@ -25,21 +21,8 @@ public class Pickup : WorldObject {
         base.doUpdate();
     }
 
-    public override void onGazeEnter() {
-        base.onGazeEnter();
-        foreach (Material m in r.materials) {
-            if (m.name.ToLower().Contains("outline")) {
-                m.SetFloat("_Outline", outlineWidth);
-            }
-        }
-    }
-
-    public override void onGazeExit() {
-        base.onGazeExit();
-        foreach (Material m in r.materials) {
-            if (m.name.ToLower().Contains("outline")) {
-                m.SetFloat("_Outline", 0f);
-            }
-        }
+    public override void Interact() {
+        base.Interact();
+        GameManager.Instance.player.Pickup(this);
     }
 }

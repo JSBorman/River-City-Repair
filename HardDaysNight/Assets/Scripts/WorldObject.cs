@@ -25,8 +25,4 @@ public class WorldObject : MonoBehaviour {
     public virtual void doUpdate() {
 
     }
-
-    public virtual void onGazeEnter() {}
-
-    public virtual void onGazeExit() {}
 }

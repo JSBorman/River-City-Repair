@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour {
 
     public float reachDistance = 5f;
-    public WorldObject gazedObject;
+    public InteractableObject gazedObject;
     
 
     Camera view;
@@ -24,10 +24,8 @@ public class Player : MonoBehaviour {
 	void Update () {
         calcView();
         if (Input.GetAxis("Interact")==1) {
-            if (gazedObject!=null && gazedObject is Pickup) {
-                //TODO: Make pickups trigger flags in GameManager
-                Debug.Log("Picked Up: " + gazedObject.gameObject.name);
-                Destroy(gazedObject.gameObject);
+            if (gazedObject!=null) {
+                gazedObject.Interact();
             }
         }
 	}
@@ -50,9 +48,15 @@ public class Player : MonoBehaviour {
             }
             gazedObject.onGazeExit();
         }
-        gazedObject = reachCast.collider.GetComponent<WorldObject>();
-        if (gazedObject != null) {
+        gazedObject = reachCast.collider.GetComponent<InteractableObject>();
+        if (gazedObject) {
             gazedObject.onGazeEnter();
         }
+    }
+
+    public void Pickup(Pickup p) {
+        //TODO: Make pickups trigger flags in GameManager
+        Debug.Log("Picked Up: " + p.gameObject.name);
+        Destroy(p.gameObject);
     }
 }
