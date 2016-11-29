@@ -9,10 +9,17 @@ public class CircuitInput : InteractableObject {
 
     public bool state = false;
 
+    CircuitManager p;
+
 	// Use this for initialization
 	void Start () {
         Init();
 	}
+
+    public override void Init() {
+        base.Init();
+        p = GetComponentInParent<CircuitManager>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -33,8 +40,9 @@ public class CircuitInput : InteractableObject {
     }
 
     public override void Interact() {
-        base.Interact();
-        throw new System.NotImplementedException();
+        state = !state;
+        p.Refresh();
+        onGazeEnter();
     }
 
 

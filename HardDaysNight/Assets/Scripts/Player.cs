@@ -23,7 +23,7 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         calcView();
-        if (Input.GetAxis("Interact")==1) {
+        if (Input.GetKeyDown(GameManager.Instance.INTERACT)) {
             if (gazedObject!=null) {
                 gazedObject.Interact();
             }

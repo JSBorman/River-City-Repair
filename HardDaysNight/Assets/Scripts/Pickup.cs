@@ -22,7 +22,6 @@ public class Pickup : InteractableObject {
     }
 
     public override void Interact() {
-        base.Interact();
         GameManager.Instance.player.Pickup(this);
     }
 }

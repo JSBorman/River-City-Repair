@@ -8,18 +8,37 @@ public class CircuitManager : MonoBehaviour {
     List<CircuitOutput> outputs;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         inputs = new List<CircuitInput>();
         inputs.AddRange(GetComponentsInChildren<CircuitInput>());
         outputs = new List<CircuitOutput>();
         outputs.AddRange(GetComponentsInChildren<CircuitOutput>());
         inputs=SortInputs(inputs);
     }
+
+    void Start() {
+
+    }
+
+    // Update is called once per frame
+
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if (GameManager.Instance.debug) {
+            Refresh();
+        }
 	}
+
+    public bool GetState(int i) {
+        return inputs[i].state;
+    }
+
+    public void Refresh() {
+        foreach (CircuitOutput co in outputs) {
+            co.calculate();
+        }
+    }
 
     List<CircuitInput> SortInputs(List<CircuitInput> l) {
         if (l.Count <= 0) {

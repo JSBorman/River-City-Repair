@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
 
     public Player player;
 
+    //Control Keys not in Axes
+    public KeyCode INTERACT = KeyCode.E;
+
 	// Use this for initialization
 	void Awake () {
         if (Instance == null) {

@@ -39,5 +39,7 @@ public class InteractableObject : WorldObject {
         outline.SetFloat("_Outline", 0f);
     }
 
-    public virtual void Interact() {}
+    public virtual void Interact() {
+        throw new System.NotImplementedException();
+    }
 }
