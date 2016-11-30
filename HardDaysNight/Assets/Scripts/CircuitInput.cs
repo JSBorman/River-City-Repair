@@ -10,9 +10,9 @@ public class CircuitInput : InteractableObject {
     public Material falseMat;
 
     public bool state = false;
+    public bool active = false;
 
     CircuitManager p;
-    Renderer r;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +22,6 @@ public class CircuitInput : InteractableObject {
     public override void Init() {
         base.Init();
         p = GetComponentInParent<CircuitManager>();
-        r = GetComponent<Renderer>();
     }
 	
 	// Update is called once per frame
@@ -44,6 +43,7 @@ public class CircuitInput : InteractableObject {
     }
 
     public override void Interact() {
+        active = true;
         state = !state;
         if (state) {
             r.sharedMaterial = trueMat;

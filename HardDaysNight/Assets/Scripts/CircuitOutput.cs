@@ -52,6 +52,9 @@ public class CircuitOutput : MonoBehaviour {
                     tmpList.RemoveAt(i);
                     break;
                 default:
+                    if (!circuit.IsActive(int.Parse(tmpList[i]))) {
+                        return false;
+                    }
                     tmpList[i] = circuit.GetState(int.Parse(tmpList[i])).ToString();
                     i++;
                     break;

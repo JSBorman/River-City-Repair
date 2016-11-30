@@ -3,9 +3,9 @@ using System.Collections;
 
 public class InteractableObject : WorldObject {
 
-    Renderer r;
+    protected Renderer r;
     protected Material outline;
-    float outlineWidth = .02f;
+    public float outlineWidth = .2f;
 
     // Use this for initialization
     void Start() {

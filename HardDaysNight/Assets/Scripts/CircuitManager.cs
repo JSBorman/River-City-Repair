@@ -34,10 +34,23 @@ public class CircuitManager : MonoBehaviour {
         return inputs[i].state;
     }
 
+    public bool IsActive(int i) {
+        return inputs[i].active;
+    }
+
     public void Refresh() {
         foreach (CircuitOutput co in outputs) {
             co.calculate();
         }
+    }
+
+    public bool IsFixed() {
+        foreach (CircuitOutput co in outputs) {
+            if (!co.state) {
+                return false;
+            }
+        }
+        return true;
     }
 
     List<CircuitInput> SortInputs(List<CircuitInput> l) {
