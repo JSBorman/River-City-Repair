@@ -1,57 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CircuitInput : InteractableObject {
+public class CircuitInput : MonoBehaviour {
 
     public int index;
-    public Color trueColor;
-    public Color falseColor;
-    public Material trueMat;
-    public Material falseMat;
 
     public bool state = false;
     public bool active = false;
 
     CircuitManager p;
+    CircuitLight display;
 
 	// Use this for initialization
 	void Start () {
-        Init();
-	}
-
-    public override void Init() {
-        base.Init();
         p = GetComponentInParent<CircuitManager>();
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        doUpdate();
-	}
-
-    public override void onGazeEnter() {
-        base.onGazeEnter();
-        if (!state) {
-            outline.SetColor("_OutlineColor",trueColor);
-        } else {
-            outline.SetColor("_OutlineColor",falseColor);
-        }
+        display = GetComponent<CircuitLight>();
     }
 
-    public override void onGazeExit() {
-        base.onGazeExit();
-    }
-
-    public override void Interact() {
+    public void OnMouseDown() {
         active = true;
         state = !state;
-        if (state) {
-            r.sharedMaterial = trueMat;
-        } else {
-            r.sharedMaterial = falseMat;
-        }
+        display.SetLight(state);
         p.Refresh();
-        onGazeEnter();
+
     }
 
 
