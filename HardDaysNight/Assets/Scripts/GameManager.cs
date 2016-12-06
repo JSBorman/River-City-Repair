@@ -45,11 +45,28 @@ public class GameManager : MonoBehaviour {
 
     public void StartGame() {
         currentLevel = 0;
+		levels = 0;
         nextLevel();
     }
 
+	//Currentlevel keeps track of which circuit level
+	//Levels keeps track of when to switch to groceries & events
     public void nextLevel() {
-        LoadLevel(++currentLevel);
+		//If finished circuit & not at main menu, load groceries
+		if (levels <= 5 && levels != 0) {
+			levels = 6;
+			LoadLevel (levels);
+		}
+		//If finished groceries, load random event
+		else if (levels == 6) {
+			levels = 7;
+			LoadLevel (levels);
+		}
+		//If finished random event, load next level
+		else {
+			LoadLevel (++currentLevel);
+			levels = currentLevel;
+		}
     }
 
     void LoadLevel(int n) {
@@ -64,5 +81,10 @@ public class GameManager : MonoBehaviour {
         }
         nextLevel();
     }
+
+	//Returns the most recent circuit level
+	public int getLevel(){
+		return currentLevel;
+	}
 
 }
