@@ -1,16 +1,21 @@
 fileFormatVersion: 2
-guid: 853a96ce7c7957f4b8bbb0e5c801f5ac
-timeCreated: 1481096278
+guid: 5f0b50c14dc50b94580e926353f09770
+timeCreated: 1481114081
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: polySurface2
-    6400000: //RootNode
+    100000: bevelPolygon2
+    100002: CompoundCurve1
+    100004: //RootNode
+    100006: IllustratorCurves1
+    400000: bevelPolygon2
+    400002: CompoundCurve1
+    400004: //RootNode
+    400006: IllustratorCurves1
+    2300000: bevelPolygon2
+    3300000: bevelPolygon2
+    4300000: bevelPolygon2
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -38,7 +43,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
