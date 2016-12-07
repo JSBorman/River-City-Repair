@@ -8,6 +8,10 @@ public class TV : InteractableObject {
     Animator anim;
     TvState state = TvState.Inactive;
     Collider col;
+    AudioSource speaker;
+
+    public GameObject screen;
+    public AudioClip broadcast;
 
     public enum TvState {
         Inactive,
@@ -30,6 +34,10 @@ public class TV : InteractableObject {
                 anim.ResetTrigger("Open");
                 anim.SetTrigger("Close");
                 col.enabled = true;
+                if (GetComponentInChildren<CircuitManager>().IsFixed()) {
+                    screen.SetActive(true);
+                    speaker.PlayOneShot(broadcast);
+                }
             }
             c.SetActive(false);
             GameManager.Instance.player.gameObject.SetActive(true);
@@ -38,6 +46,7 @@ public class TV : InteractableObject {
 
     public override void Init() {
         base.Init();
+        speaker = GetComponent<AudioSource>();
         col = GetComponent<Collider>();
         c = transform.FindChild("ViewCamera").gameObject;
         c.SetActive(false);
