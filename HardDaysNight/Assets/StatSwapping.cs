@@ -11,27 +11,25 @@ public class StatSwapping : MonoBehaviour {
 	public int type;
 	// Use this for initialization
 	void Start () {
-		
+		Debug.Log ("Our Stat type & Val: " + type + ", " + getStat());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (type == 0) {	//Family
-			if (getStat () >= 100) {
-				return;
-			} else if (getStat () >= 70) {
-				full.sprite = stages [1];
-				return;
-			} else if (getStat () >= 50) {
-				full.sprite = stages [2];
-				return;
-			} else if (getStat () >= 30) {
-				full.sprite = stages [3];
-				return;
-			} else {
-				full.sprite = stages [4];
-				return;
-			}
+		if (getStat () >= 100) {
+			return;
+		} else if (getStat () >= 70) {
+			full.sprite = stages [1];
+			return;
+		} else if (getStat () >= 50) {
+			full.sprite = stages [2];
+			return;
+		} else if (getStat () >= 30) {
+			full.sprite = stages [3];
+			return;
+		} else {
+			full.sprite = stages [4];
+			return;
 		}
 	}
 
