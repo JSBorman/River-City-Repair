@@ -13,6 +13,8 @@ public class GroceryItem : MonoBehaviour {
 	public StatObj mySleep;
 	public StatObj myFam;
 
+	public GroceryManager grocer;
+
 	public Image check;
 	Color temp;
 
@@ -28,7 +30,6 @@ public class GroceryItem : MonoBehaviour {
 
 	//Values Stored Cost -Family - HP - Happiness
 	public void setValues(int val1, int val2, int val3, int val4){
-		Debug.Log ("Setting Values");
 		cost = val1;
 		family_change = val2;
 		health_change = val3;
@@ -61,10 +62,12 @@ public class GroceryItem : MonoBehaviour {
 			temp.a = 255f;
 			check.color = temp;
 			setXmasStatus(true);
+			grocer.updateCost (cost);
 		} else {	//If in cart already,remove & reset stat changes
 			myHealth.addValue (-1 * health_change);
 			mySleep.addValue (-1 * sleep_change);
 			myFam.addValue (-1 * family_change);
+			grocer.updateCost (-1 * cost);
 			inCart = false;
 			temp.a = 0f;
 			check.color = temp;
@@ -74,17 +77,15 @@ public class GroceryItem : MonoBehaviour {
 
 	public void checkGifts(){
 		//Checks off bought gifts & disables them
-		Debug.Log (isXmas);
-		Debug.Log (GameManager.Instance.gift3);
 		if ((isXmas == 1 && GameManager.Instance.gift1) ||
 			(isXmas == 2 && GameManager.Instance.gift2) ||
 			(isXmas == 3 && GameManager.Instance.gift3)) 
-		{	Debug.Log (gameObject.name);
+		{	
 			temp.a = 255f;
 			check.color = temp;
 			disabled = true;		}
 		if (isXmas == 3 && GameManager.Instance.gift3) 
-		{	Debug.Log (gameObject.name);
+		{
 			temp.a = 255f;
 			check.color = temp;
 			disabled = true;		}
@@ -100,7 +101,6 @@ public class GroceryItem : MonoBehaviour {
 			GameManager.Instance.setGift2(status);
 		if (isXmas == 3) {
 			GameManager.Instance.setGift3 (status);
-			Debug.Log ("Set status to: " + status);
 		}
 	}
 
