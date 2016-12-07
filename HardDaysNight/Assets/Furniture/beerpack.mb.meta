@@ -134,6 +134,25 @@ ModelImporter:
     4300032: revolvedSurface16
     4300034: pCylinder7
     4300036: pCube3
+    6400000: pCube3
+    6400002: pCylinder2
+    6400004: pCylinder3
+    6400006: pCylinder4
+    6400008: pCylinder5
+    6400010: pCylinder6
+    6400012: pCylinder7
+    6400014: pPipe2
+    6400016: pPipe3
+    6400018: pPipe4
+    6400020: pPipe5
+    6400022: pPipe6
+    6400024: pPipe7
+    6400026: revolvedSurface10
+    6400028: revolvedSurface12
+    6400030: revolvedSurface14
+    6400032: revolvedSurface16
+    6400034: revolvedSurface6
+    6400036: revolvedSurface8
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -159,9 +178,9 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.01
+    globalScale: 0.015
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

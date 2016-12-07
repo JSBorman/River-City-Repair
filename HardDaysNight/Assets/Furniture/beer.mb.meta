@@ -36,6 +36,9 @@ ModelImporter:
     4300000: pPipe2
     4300002: revolvedSurface6
     4300004: pCylinder2
+    6400000: pCylinder2
+    6400002: pPipe2
+    6400004: revolvedSurface6
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -61,7 +64,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.015
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

@@ -45,6 +45,12 @@ ModelImporter:
     4300006: pCone3
     4300008: pCone4
     4300010: pCone5
+    6400000: pCone1
+    6400002: pCone2
+    6400004: pCone3
+    6400006: pCone4
+    6400008: pCone5
+    6400010: pCylinder3
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -72,7 +78,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -92,6 +98,7 @@ ModelImporter:
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -102,7 +109,10 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
