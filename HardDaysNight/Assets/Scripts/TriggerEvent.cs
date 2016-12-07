@@ -8,8 +8,10 @@ public class TriggerEvent : MonoBehaviour {
 	public int fam;
 	public int hp;
 	public int happy;
+	public int money;
 
 	public void onClickMe(){
+		//If can be afforded!!
 		GameManager.Instance.updatePlayerFam (fam);
 		GameManager.Instance.updatePlayerHP (hp);
 		GameManager.Instance.updatePlayerHappy (happy);

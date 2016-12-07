@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
     public KeyCode INTERACT = KeyCode.E;
 
 	//Player Stats
-	public int playerFam, playerHP, playerHappy;
+	public int playerFam, playerHP, playerHappy, playerMun;
 
     // Use this for initialization
     void Awake() {
@@ -57,9 +57,8 @@ public class GameManager : MonoBehaviour {
 		levels = 0;
         nextLevel();
 
-		playerFam = 100;
-		playerHP = 100;
-		playerHappy = 100;
+		playerFam, playerHP, playerHappy = 100;
+		playerMun = 0;
     }
 
 	//Currentlevel keeps track of which circuit level
