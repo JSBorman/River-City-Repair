@@ -16,6 +16,7 @@ ModelImporter:
     100016: pPipe2
     100018: revolvedSurface5
     100020: revolvedSurface6
+    100022: nurbsToPoly1
     400000: //RootNode
     400002: CompoundCurve2
     400004: CompoundCurve3
@@ -27,15 +28,19 @@ ModelImporter:
     400016: pPipe2
     400018: revolvedSurface5
     400020: revolvedSurface6
+    400022: nurbsToPoly1
     2300000: pCylinder2
     2300002: pPipe2
     2300004: revolvedSurface6
+    2300006: nurbsToPoly1
     3300000: pCylinder2
     3300002: pPipe2
     3300004: revolvedSurface6
+    3300006: nurbsToPoly1
     4300000: pPipe2
     4300002: revolvedSurface6
     4300004: pCylinder2
+    4300006: nurbsToPoly1
     6400000: pCylinder2
     6400002: pPipe2
     6400004: revolvedSurface6

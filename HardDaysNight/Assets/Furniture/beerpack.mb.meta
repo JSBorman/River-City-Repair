@@ -41,6 +41,27 @@ ModelImporter:
     100066: revolvedSurface9
     100068: transform1
     100070: transform2
+    100072: nurbsToPoly1
+    100074: nurbsToPoly2
+    100076: nurbsToPoly3
+    100078: nurbsToPoly4
+    100080: nurbsToPoly5
+    100082: nurbsToPoly6
+    100084: pCylinder10
+    100086: pCylinder11
+    100088: pCylinder12
+    100090: pCylinder8
+    100092: pCylinder9
+    100094: pPipe10
+    100096: pPipe11
+    100098: pPipe12
+    100100: pPipe8
+    100102: pPipe9
+    100104: revolvedSurface17
+    100106: revolvedSurface18
+    100108: revolvedSurface19
+    100110: revolvedSurface20
+    100112: revolvedSurface21
     400000: //RootNode
     400002: CompoundCurve2
     400004: CompoundCurve3
@@ -77,6 +98,27 @@ ModelImporter:
     400066: revolvedSurface9
     400068: transform1
     400070: transform2
+    400072: nurbsToPoly1
+    400074: nurbsToPoly2
+    400076: nurbsToPoly3
+    400078: nurbsToPoly4
+    400080: nurbsToPoly5
+    400082: nurbsToPoly6
+    400084: pCylinder10
+    400086: pCylinder11
+    400088: pCylinder12
+    400090: pCylinder8
+    400092: pCylinder9
+    400094: pPipe10
+    400096: pPipe11
+    400098: pPipe12
+    400100: pPipe8
+    400102: pPipe9
+    400104: revolvedSurface17
+    400106: revolvedSurface18
+    400108: revolvedSurface19
+    400110: revolvedSurface20
+    400112: revolvedSurface21
     2300000: pCube3
     2300002: pCylinder2
     2300004: pCylinder3
@@ -96,6 +138,27 @@ ModelImporter:
     2300032: revolvedSurface16
     2300034: revolvedSurface6
     2300036: revolvedSurface8
+    2300038: nurbsToPoly1
+    2300040: nurbsToPoly2
+    2300042: nurbsToPoly3
+    2300044: nurbsToPoly4
+    2300046: nurbsToPoly5
+    2300048: nurbsToPoly6
+    2300050: pCylinder10
+    2300052: pCylinder11
+    2300054: pCylinder12
+    2300056: pCylinder8
+    2300058: pCylinder9
+    2300060: pPipe10
+    2300062: pPipe11
+    2300064: pPipe12
+    2300066: pPipe8
+    2300068: pPipe9
+    2300070: revolvedSurface17
+    2300072: revolvedSurface18
+    2300074: revolvedSurface19
+    2300076: revolvedSurface20
+    2300078: revolvedSurface21
     3300000: pCube3
     3300002: pCylinder2
     3300004: pCylinder3
@@ -115,6 +178,27 @@ ModelImporter:
     3300032: revolvedSurface16
     3300034: revolvedSurface6
     3300036: revolvedSurface8
+    3300038: nurbsToPoly1
+    3300040: nurbsToPoly2
+    3300042: nurbsToPoly3
+    3300044: nurbsToPoly4
+    3300046: nurbsToPoly5
+    3300048: nurbsToPoly6
+    3300050: pCylinder10
+    3300052: pCylinder11
+    3300054: pCylinder12
+    3300056: pCylinder8
+    3300058: pCylinder9
+    3300060: pPipe10
+    3300062: pPipe11
+    3300064: pPipe12
+    3300066: pPipe8
+    3300068: pPipe9
+    3300070: revolvedSurface17
+    3300072: revolvedSurface18
+    3300074: revolvedSurface19
+    3300076: revolvedSurface20
+    3300078: revolvedSurface21
     4300000: pPipe2
     4300002: revolvedSurface6
     4300004: pCylinder2
@@ -134,6 +218,27 @@ ModelImporter:
     4300032: revolvedSurface16
     4300034: pCylinder7
     4300036: pCube3
+    4300038: nurbsToPoly1
+    4300040: pCylinder8
+    4300042: revolvedSurface17
+    4300044: pPipe8
+    4300046: nurbsToPoly2
+    4300048: nurbsToPoly3
+    4300050: revolvedSurface18
+    4300052: pPipe9
+    4300054: pCylinder9
+    4300056: nurbsToPoly4
+    4300058: revolvedSurface19
+    4300060: pPipe10
+    4300062: pCylinder10
+    4300064: nurbsToPoly5
+    4300066: revolvedSurface20
+    4300068: pPipe11
+    4300070: pCylinder11
+    4300072: nurbsToPoly6
+    4300074: revolvedSurface21
+    4300076: pPipe12
+    4300078: pCylinder12
     6400000: pCube3
     6400002: pCylinder2
     6400004: pCylinder3
@@ -153,6 +258,27 @@ ModelImporter:
     6400032: revolvedSurface16
     6400034: revolvedSurface6
     6400036: revolvedSurface8
+    6400038: nurbsToPoly1
+    6400040: nurbsToPoly2
+    6400042: nurbsToPoly3
+    6400044: nurbsToPoly4
+    6400046: nurbsToPoly5
+    6400048: nurbsToPoly6
+    6400050: pCylinder10
+    6400052: pCylinder11
+    6400054: pCylinder12
+    6400056: pCylinder8
+    6400058: pCylinder9
+    6400060: pPipe10
+    6400062: pPipe11
+    6400064: pPipe12
+    6400066: pPipe8
+    6400068: pPipe9
+    6400070: revolvedSurface17
+    6400072: revolvedSurface18
+    6400074: revolvedSurface19
+    6400076: revolvedSurface20
+    6400078: revolvedSurface21
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -180,7 +306,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 0.015
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
