@@ -78,17 +78,18 @@ public class GameManager : MonoBehaviour {
 	//Levels keeps track of when to switch to groceries & events
     public void nextLevel() {
 
-		//Lose game if lost stats
-		if (playerFam <= 0 || playerHP <= 0 || playerHappy <= 0)
-			LoadLevel (9);
-		
 		//Win Game when done
-		if (levels == 7 && currentLevel == 5) {
+		if (levels == 6 && currentLevel == 5) {
 			LoadLevel (8);
 		}
 
+		//Lose game if lost stats
+		else if ((getPlayerHP () <= 0 || getPlayerFam () <= 0 || getPlayerHappy () <= 0 ) && currentLevel > 2) {
+			LoadLevel (9);
+		}
+
 		//If at main menu or Random Event, go to next circuit
-		if (levels == 0 || levels == 7){
+		else if (levels == 0 || levels == 7){
 			LoadLevel (++currentLevel);
 			levels = currentLevel;
 		}
@@ -135,7 +136,7 @@ public class GameManager : MonoBehaviour {
 
 	public void earnWages(){
 		Debug.Log ("Earning Wages");
-		int tmpWages = 70;
+		int tmpWages = 80;
 
 		if (!halfWages)
 			playerMun = playerMun + tmpWages;
