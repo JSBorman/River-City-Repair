@@ -1,27 +1,25 @@
 fileFormatVersion: 2
-guid: 15716cb3ada6ea54a950b9e9413de66d
-timeCreated: 1481051598
-licenseType: Pro
+guid: 2eec4c2d6e207ce4bbd28205dff37a7d
+timeCreated: 1481096276
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: pCube1
-    100002: pCube2
-    100004: pCube3
-    100006: //RootNode
-    400000: pCube1
-    400002: pCube2
-    400004: pCube3
-    400006: //RootNode
-    2300000: pCube1
-    2300002: pCube2
-    2300004: pCube3
-    3300000: pCube1
-    3300002: pCube2
-    3300004: pCube3
-    4300000: pCube1
-    4300002: pCube2
-    4300004: pCube3
+    100000: //RootNode
+    100002: pCone1
+    100004: pCone2
+    100006: pCylinder1
+    100008: transform1
+    100010: transform2
+    400000: //RootNode
+    400002: pCone1
+    400004: pCone2
+    400006: pCylinder1
+    400008: transform1
+    400010: transform2
+    2300000: pCone2
+    3300000: pCone2
+    4300000: pCone2
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -47,7 +45,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -66,7 +64,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -83,7 +81,7 @@ ModelImporter:
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
