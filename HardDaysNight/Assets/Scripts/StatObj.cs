@@ -22,9 +22,10 @@ public class StatObj : MonoBehaviour {
 		text = GetComponent<Text> ();
 	}
 	
-	// Prints "		Name: value"
+	// Prints "Value"
 	void Update () {
-		text.text = "\t" + stat_name + ": " + curr_value;
+		//text.text = "\t" + stat_name + ": " + curr_value;
+		text.text = "" + curr_value;
 	}
 
 	//Change the value of this stat
@@ -38,15 +39,11 @@ public class StatObj : MonoBehaviour {
 			curr_value += delta;
 	}
 
+	//Helper Functions
 	public string getName(){
-		return stat_name;
-	}
-
+		return stat_name;	}
 	public int getValue(){
-		return curr_value;
-	}
-
+		return curr_value;	}
 	public int getMaxValue(){
-		return max_value;
-	}
+		return max_value;	}
 }
