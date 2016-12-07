@@ -132,6 +132,15 @@ ModelImporter:
     4300012: pCylinder11
     4300014: pCylinder12
     4300016: pCylinder13
+    6400000: pCube13
+    6400002: pCube2
+    6400004: pCube3
+    6400006: pCylinder1
+    6400008: pCylinder11
+    6400010: pCylinder12
+    6400012: pCylinder13
+    6400014: pCylinder2
+    6400016: screws:pCylinder2
     7400000: Take 001
     9500000: //RootNode
   materials:
@@ -177,7 +186,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

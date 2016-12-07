@@ -5,6 +5,7 @@ public class InteractableObject : WorldObject {
 
     protected Renderer r;
     protected Material outline;
+    public GameObject outlinedMesh;
     public float outlineWidth = .2f;
 
     // Use this for initialization
@@ -14,10 +15,16 @@ public class InteractableObject : WorldObject {
 
     public override void Init() {
         base.Init();
-        r = GetComponent<Renderer>();
-        foreach (Material m in r.materials) {
-            if (m.name.ToLower().Contains("outline")) {
-                outline = m;
+        if (outlinedMesh) {
+            r = outlinedMesh.GetComponent<Renderer>();
+        } else {
+            r = GetComponent<Renderer>();
+        }
+        if (r) {
+            foreach (Material m in r.materials) {
+                if (m.name.ToLower().Contains("outline")) {
+                    outline = m;
+                }
             }
         }
     }
@@ -32,11 +39,15 @@ public class InteractableObject : WorldObject {
     }
 
     public virtual void onGazeEnter() {
-        outline.SetFloat("_Outline", outlineWidth);
+        if (outline) {
+            outline.SetFloat("_Outline", outlineWidth);
+        }
     }
 
     public virtual void onGazeExit() {
-        outline.SetFloat("_Outline", 0f);
+        if (outline) {
+            outline.SetFloat("_Outline", 0f);
+        }
     }
 
     public virtual void Interact() {

@@ -50,6 +50,7 @@ public class TV : InteractableObject {
         GameManager.Instance.player.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        onGazeExit();
     }
 
     private void OnMouseDown() {
