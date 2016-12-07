@@ -4,11 +4,10 @@ using System.Collections;
 
 public class GroceryItem : MonoBehaviour {
 
-	public string stat_name;
-
-	public int health_change = 0;
-	public int sleep_change = 0;
-	public int family_change = 0;
+	int health_change;
+	int sleep_change;
+	int family_change;
+	int cost;
 
 	public StatObj myHealth;
 	public StatObj mySleep;
@@ -24,13 +23,20 @@ public class GroceryItem : MonoBehaviour {
 		temp = check.color;
 	}
 
-	// Update is called once per frame
-	void Update () {
+	//Values Stored Cost -Family - HP - Happiness
+	public void setValues(int val1, int val2, int val3, int val4){
+		Debug.Log ("Setting Values");
+		cost = val1;
+		family_change = val2;
+		health_change = val3;
+		sleep_change = val4;
 	}
 
 	//Add or remove items from cart
 	public void onClickMe(){
 		//If not in cart, add stat change to each stat
+		Debug.Log("Clicked, cost = " + cost + ", " + family_change);
+
 		if (!inCart) {
 			mySleep.addValue (sleep_change);
 			myHealth.addValue (health_change);
