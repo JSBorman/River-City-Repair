@@ -5,21 +5,19 @@ using System.Collections.Generic;
 public class CircuitOutput : MonoBehaviour {
 
     public string conditions;
-
-    public Material trueMat;
-    public Material falseMat;
-
-    Renderer r;
+    
     CircuitManager circuit;
+    CircuitLight display;
 
     public bool state;
 
     void Awake() {
-        r = GetComponent<Renderer>();
+
     }
 
     // Use this for initialization
     void Start () {
+        display = GetComponent<CircuitLight>();
         circuit = GetComponentInParent<CircuitManager>();
         calculate();
     }
@@ -67,10 +65,6 @@ public class CircuitOutput : MonoBehaviour {
 
     void ChangeState(bool newState) {
         state = newState;
-        if (state) {
-            r.sharedMaterial = trueMat;
-        } else {
-            r.sharedMaterial = falseMat;
-        }
+        display.SetLight(state);
     }
 }

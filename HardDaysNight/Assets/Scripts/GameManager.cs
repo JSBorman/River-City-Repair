@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour {
     //Control Keys not in Axes
     public KeyCode INTERACT = KeyCode.E;
 
+	//Player Stats
+	public int playerFam, playerHP, playerHappy;
+
     // Use this for initialization
     void Awake() {
         if (Instance == null) {
@@ -40,13 +43,18 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+		//If stats below 0
+		//Trigger Game Over [Missing Art Assets]
     }
 
     public void StartGame() {
         currentLevel = 0;
 		levels = 0;
         nextLevel();
+
+		playerFam = 100;
+		playerHP = 100;
+		playerHappy = 100;
     }
 
 	//Currentlevel keeps track of which circuit level
@@ -86,5 +94,15 @@ public class GameManager : MonoBehaviour {
 	public int getLevel(){
 		return currentLevel;
 	}
+
+	//Returns specific player stat
+	public int getPlayerFam(){ return playerFam;}
+	public int getPlayerHP(){ return playerHP;	}
+	public int getPlayerHappy(){ return playerHappy;}
+
+	//Given int, adds / subtracts from current total
+	public void updatePlayerFam(int fam){ playerFam += fam;}
+	public void updatePlayerHP(int hp){ playerHP += hp;}
+	public void updatePlayerHappy(int happy){ playerHappy += happy;}
 
 }
