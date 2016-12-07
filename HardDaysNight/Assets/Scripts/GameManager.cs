@@ -33,9 +33,12 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Start() {
+        Debug.Log("Start");
+        circuits.Clear();
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Circuit")) {
             CircuitManager c = g.GetComponent<CircuitManager>();
             if (c) {
+                Debug.Log("Got Circuit");
                 circuits.Add(c);
             }
         }
@@ -70,7 +73,6 @@ public class GameManager : MonoBehaviour {
 		if (levels == 0 || levels == 7){
 			LoadLevel (++currentLevel);
 			levels = currentLevel;
-            Start();
 		}
 
 		//If finished circuit, load groceries
@@ -87,6 +89,12 @@ public class GameManager : MonoBehaviour {
 
     void LoadLevel(int n) {
         SceneManager.LoadScene(n);
+        StartCoroutine(DelayLoad());
+    }
+
+    IEnumerator DelayLoad() {
+        yield return new WaitForSeconds(.5f);
+        Start();
     }
 
     private void findPlayer() {
