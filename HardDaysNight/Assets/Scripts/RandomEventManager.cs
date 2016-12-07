@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RandomEventManager : MonoBehaviour {
 
@@ -12,88 +13,141 @@ public class RandomEventManager : MonoBehaviour {
 	 *  - Monetary cost of options
 	 */
 
-	public Sprite placeholder;
-	int[] usedClues = { 0, 0, 0, 0, 0, 0, 0 };	//Holds 1 if used
-
-	public Object ButtonA, ButtonB, ButtonC;
-
-	//Whether a third option is available (true if not)
-	bool noThird = true;
+	public RawImage placeholder;
+	public Texture[] backDrops = new Texture[7];
+	public TriggerEvent ButtonA;
+	public TriggerEvent OtherButton;
 
 	//Text displayed on each option
-	string A, B, C = "";
+	string A = "";
+	string B = "";
 
 	//Gains or Losses. Order: Money, Fam, HP, Happiness
-	int[] choiceA, choiceB, choiceC;
+	int[] choiceA, choiceB;
 
-	//Monetary Cost of option
-	int costA, costB, costC = 0;
+	//Monetary Cost of option A
+	int costA = 0;
+
+	//Special Event Triggers
+	bool halfWages, halfWallet = false;
 
 	// Use this for initialization
 	void Start () {
-		//Load Sprites
-		Sprite placeholder1 = Resources.Load<Sprite> ("Random-Events/Random-Event1.png");
-		Sprite placeholder2 = Resources.Load<Sprite> ("Random-Events/Random-Event2.png");
-		Sprite placeholder3 = Resources.Load<Sprite> ("Random-Events/Random-Event3.png");
-		Sprite placeholder4 = Resources.Load<Sprite> ("Random-Events/Random-Event4.png");
-		Sprite placeholder5 = Resources.Load<Sprite> ("Random-Events/Random-Event5.png");
-		Sprite placeholder6 = Resources.Load<Sprite> ("Random-Events/Random-Event6.png");
-		Sprite placeholder7 = Resources.Load<Sprite> ("Random-Events/Random-Event7.png");
 
-		//roll random number
-		//Check if item was used & reroll if true
-		switchEvents(1);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		//On Friday don't get half Wage event
+		if (GameManager.Instance.getLevel() == 5)
+			GameManager.Instance.usedClues.Remove (5);
+
+		int seed = (int) Random.Range ((float) 1, (float) GameManager.Instance.usedClues.Count);	//roll random index from usedClues
+		seed = (int) GameManager.Instance.usedClues[seed];
+		GameManager.Instance.usedClues.Remove(seed);		 //Remove item from used clues
+		switchEvents(seed);
 	}
 
 	//Gains or Losses Order: Money, Fam, HP, Happiness
+	//Large: 20, 25
+	//Medium: 10, 15
+	//Small: 5
 	void switchEvents(int seed){
 		switch (seed) {
-		case 1:
-			placeholder = placeholder1;
+		case 1:	//Large Cost, Large Rewards & Losses
+			placeholder.texture = backDrops[0];
 
 			A = "Pay for the surgery - $50";
-			choiceA = new int[] { -50, 20, 0, 20};
-			int costA = 50;
+			choiceA = new int[] { -50, 25, 0, 20};
+			costA = 50;
 
 			B = "Put the dog to sleep";
-			choiceB= new int[]{ 0, -20, 0, -25};
-			
-			noThird = true;
+			choiceB= new int[]{ 0, -15, 0, -20};
+
 			break;
-/*		case 2:
+		case 2:
+			placeholder.texture = backDrops[1];
+			A = "Send money to pay for the repairs";
+			choiceA = new int[] { -20, 10, 0, 5};
+			costA = 20;
+
+			B = "Tell her to figure it out herself";
+			choiceB= new int[]{ 0, -10, 0, -5};
+
+
 			break;
 		case 3:
+			placeholder.texture = backDrops[2];
+			A = "Accept the offer +$50";
+			choiceA = new int[] {50, 0, -25, 0};
+
+			B = "Close your laptop & re-evaluate your life";
+			choiceB = new int[] { 0, 5, 5, 10};
+
 			break;
 		case 4:
+			placeholder.texture = backDrops[3];
+			A = "Give him the money: Lose half of wallet";
+			choiceA = new int[] {0, 0, 0, 0};
+			halfWallet = true;
+
+			B = "Attempt to fight him off";
+			choiceB = new int[] { 0, 0, -15, 0};
+
 			break;
 		case 5:
+			placeholder.texture = backDrops[4];
+			A = "Leave work early tomorrow for half wages";
+			choiceA = new int[] {0, 20, 0, 20};
+			bool halfWages = true;
+
+			B = "Can't afford to miss work";
+			choiceB = new int[] { 0, -10, 0, -10};
+
 			break;
 		case 6:
-			break; */
+			placeholder.texture = backDrops[5];
+			A = "That's a great idea!";
+			choiceA = new int[] {20, -10, 0, 5};
+
+			B = "No, you need to focus on your studies.";
+			choiceB = new int[] { 0, 15, 0, 10};
+
+			break;
 		default:
-			play
+			placeholder.texture = backDrops[6];
+			A = "Keep it for expenses +$20";
+			choiceA = new int[] {20, 5, 0, 5};
+
+			B = "Put it straight into the college fund";
+			choiceB = new int[] { 0, 10, 0, 20};
 			break;
 		}
 
-		buttonLogic (choiceA, choiceB, choiceC);
+		buttonLogicA (choiceA, halfWages, halfWallet);
+		buttonLogicB (choiceB);
 	}
 
-	public void buttonLogic(int[] aRes, int[] bRes, int[] cRes){
-
+	public void buttonLogicA(int[] aRes, bool wages, bool wallet){
 		//Update button1
-		//Update button2
+		ButtonA.setCost(costA);
+		ButtonA.setMoney (aRes [0]);
+		ButtonA.setFam (aRes [1]);
+		ButtonA.setHP (aRes [2]);
+		ButtonA.setHappy (aRes [3]);
+		ButtonA.setOurText (A);
 
-		//Check to update button 3
-		if (noThird) {
-			//Delete button3
-		} else {
-			//Fillout button three
-		}
+		ButtonA.setHalfWages (halfWages);
+		ButtonA.setHalfWallet (halfWallet);
+
+		//Reset bools
+		halfWages = false;
+		halfWallet = false;
+	}
+
+	public void buttonLogicB(int[] bRes){
+		//Update button2
+		OtherButton.setMoney (bRes [0]);
+		OtherButton.setFam (bRes [1]);
+		OtherButton.setHP (bRes [2]);
+		OtherButton.setHappy (bRes [3]);
+		OtherButton.setOurText (B);
 	}
 
 }

@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
     public int levels = 1;
     public int currentLevel = 0;
 
+	public ArrayList usedClues = new ArrayList {1, 2, 3, 4, 5, 6, 7};		
+
     public Player player;
     public List<CircuitManager> circuits;
 
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour {
 
 	//Player Stats
 	public int playerFam, playerHP, playerHappy, playerMun;
+	bool halfWages = false;
 
     // Use this for initialization
     void Awake() {
@@ -57,7 +60,9 @@ public class GameManager : MonoBehaviour {
 		levels = 0;
         nextLevel();
 
-		playerFam, playerHP, playerHappy = 100;
+		playerFam = 100;
+		playerHP = 100;
+		playerHappy = 100;
 		playerMun = 0;
     }
 
@@ -113,10 +118,18 @@ public class GameManager : MonoBehaviour {
 	public int getPlayerFam(){ return playerFam;}
 	public int getPlayerHP(){ return playerHP;	}
 	public int getPlayerHappy(){ return playerHappy;}
+	public int getPlayerMun(){return playerMun;	}
 
 	//Given int, adds / subtracts from current total
 	public void updatePlayerFam(int fam){ playerFam += fam;}
 	public void updatePlayerHP(int hp){ playerHP += hp;}
 	public void updatePlayerHappy(int happy){ playerHappy += happy;}
+	public void updatePlayerMun(int mun){playerMun += mun;}
+
+	//For random event
+	public void setHalfWages(bool rand){
+		halfWages = rand;
+		return;
+	}
 
 }
