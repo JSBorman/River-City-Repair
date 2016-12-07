@@ -3,13 +3,9 @@ using System.Collections;
 
 public class Checkout : MonoBehaviour {
 
-	public StatObj old_health;
-	public StatObj old_sleep;
-	public StatObj old_fam;
-
-	public StatObj new_health;
-	public StatObj new_sleep;
-	public StatObj new_fam;
+	public StatObj hp;
+	public StatObj happy;
+	public StatObj fam;
 
 	// Use this for initialization
 	void Start () {
@@ -22,9 +18,10 @@ public class Checkout : MonoBehaviour {
 	}
 
 	public void onClickMe(){
-		old_health.addValue(new_health.getValue());
-		old_sleep.addValue (new_sleep.getValue ());
-		old_fam.addValue (new_fam.getValue ());
+
+		GameManager.Instance.updatePlayerFam (fam.getValue ());
+		GameManager.Instance.updatePlayerHP (hp.getValue ());
+		GameManager.Instance.updatePlayerHappy (happy.getValue ());
 
 		//Trigger Next scene
 		GameManager.Instance.nextLevel();

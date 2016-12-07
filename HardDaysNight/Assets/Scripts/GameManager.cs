@@ -43,7 +43,8 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+		//If stats below 0
+		//Trigger Game Over [Missing Art Assets]
     }
 
     public void StartGame() {

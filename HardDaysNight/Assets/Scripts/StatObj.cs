@@ -22,9 +22,10 @@ public class StatObj : MonoBehaviour {
 		text = GetComponent<Text> ();
 	}
 	
-	// Prints "		Name: value"
+	// Prints "Value"
 	void Update () {
-		text.text = "\t" + stat_name + ": " + curr_value;
+		//text.text = "\t" + stat_name + ": " + curr_value;
+		text.text = "" + curr_value;
 	}
 
 	//Change the value of this stat
