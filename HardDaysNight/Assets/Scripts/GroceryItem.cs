@@ -29,7 +29,7 @@ public class GroceryItem : MonoBehaviour {
 	}
 
 	//Values Stored Cost -Family - HP - Happiness
-	public void setValues(int val1, int val2, int val3, int val4){
+	public void setValues(int val1, int val2, int val4, int val3){
 		cost = val1;
 		family_change = val2;
 		health_change = val3;
