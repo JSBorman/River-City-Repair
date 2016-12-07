@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
     public int levels = 1;
     public int currentLevel = 0;
 
+	public ArrayList usedClues = new ArrayList {1, 2, 3, 4, 5, 6, 7};		
+
     public Player player;
     public List<CircuitManager> circuits;
 
@@ -19,7 +21,8 @@ public class GameManager : MonoBehaviour {
     public KeyCode INTERACT = KeyCode.E;
 
 	//Player Stats
-	public int playerFam, playerHP, playerHappy;
+	public int playerFam, playerHP, playerHappy, playerMun;
+	bool halfWages = false;
 
     // Use this for initialization
     void Awake() {
@@ -33,9 +36,12 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Start() {
+        Debug.Log("Start");
+        circuits.Clear();
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Circuit")) {
             CircuitManager c = g.GetComponent<CircuitManager>();
             if (c) {
+                Debug.Log("Got Circuit");
                 circuits.Add(c);
             }
         }
@@ -60,6 +66,7 @@ public class GameManager : MonoBehaviour {
 		playerFam = 100;
 		playerHP = 100;
 		playerHappy = 100;
+		playerMun = 0;
     }
 
 	//Currentlevel keeps track of which circuit level
@@ -70,7 +77,6 @@ public class GameManager : MonoBehaviour {
 		if (levels == 0 || levels == 7){
 			LoadLevel (++currentLevel);
 			levels = currentLevel;
-            Start();
 		}
 
 		//If finished circuit, load groceries
@@ -87,6 +93,12 @@ public class GameManager : MonoBehaviour {
 
     void LoadLevel(int n) {
         SceneManager.LoadScene(n);
+        StartCoroutine(DelayLoad());
+    }
+
+    IEnumerator DelayLoad() {
+        yield return new WaitForSeconds(.5f);
+        Start();
     }
 
     private void findPlayer() {
@@ -114,10 +126,18 @@ public class GameManager : MonoBehaviour {
 	public int getPlayerFam(){ return playerFam;}
 	public int getPlayerHP(){ return playerHP;	}
 	public int getPlayerHappy(){ return playerHappy;}
+	public int getPlayerMun(){return playerMun;	}
 
 	//Given int, adds / subtracts from current total
 	public void updatePlayerFam(int fam){ playerFam += fam;}
 	public void updatePlayerHP(int hp){ playerHP += hp;}
 	public void updatePlayerHappy(int happy){ playerHappy += happy;}
+	public void updatePlayerMun(int mun){playerMun += mun;}
+
+	//For random event
+	public void setHalfWages(bool rand){
+		halfWages = rand;
+		return;
+	}
 
 }
