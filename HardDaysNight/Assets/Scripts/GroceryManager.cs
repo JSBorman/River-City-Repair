@@ -15,9 +15,9 @@ public class GroceryManager : MonoBehaviour {
 	public GroceryItem Check5;
 
 	//Make public when done testing
-	GroceryItem XMas1;
-	GroceryItem XMas2;
-	GroceryItem Xmas3;
+	public GroceryItem XMas1;
+	public GroceryItem XMas2;
+	public GroceryItem XMas3;
 
 
 	// Use this for initialization
@@ -25,9 +25,12 @@ public class GroceryManager : MonoBehaviour {
 		int seed = GameManager.Instance.getLevel ();
 		weekDay (seed);
 
-//		XMas1.setValues(50, 0, 0, 0);
-//		XMas2.setValues(80, 0, 0, 0);
-//		Xmas3.setValues(10, 0, 0, 0);
+		XMas1.setValues(50, 0, 0, 0);
+		XMas2.setValues(80, 0, 0, 0);
+		XMas3.setValues(10, 0, 0, 0);
+		XMas1.setXmas (1);
+		XMas2.setXmas (2);
+		XMas3.setXmas (3);
 	}
 
 	void weekDay(int day){

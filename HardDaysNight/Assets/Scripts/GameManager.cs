@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
 
 	//Player Stats
 	public int playerFam, playerHP, playerHappy, playerMun;
+	public bool gift1, gift2, gift3;
 	bool halfWages = false;
 
     // Use this for initialization
@@ -67,6 +68,9 @@ public class GameManager : MonoBehaviour {
 		playerHP = 100;
 		playerHappy = 100;
 		playerMun = 0;
+		gift1 = false;
+		gift2 = false;
+		gift3 = false;
     }
 
 	//Currentlevel keeps track of which circuit level
@@ -138,6 +142,16 @@ public class GameManager : MonoBehaviour {
 	public void setHalfWages(bool rand){
 		halfWages = rand;
 		return;
+	}
+
+	public void setGift1(bool gift){
+		gift1 = gift;
+	}
+	public void setGift2(bool gift){
+		gift2 = gift;
+	}
+	public void setGift3(bool gift){
+		gift3 = gift;
 	}
 
 }
