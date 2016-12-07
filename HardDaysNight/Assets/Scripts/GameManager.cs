@@ -78,6 +78,15 @@ public class GameManager : MonoBehaviour {
 	//Levels keeps track of when to switch to groceries & events
     public void nextLevel() {
 
+		//Lose game if lost stats
+		if (playerFam <= 0 || playerHP <= 0 || playerHappy <= 0)
+			LoadLevel (9);
+		
+		//Win Game when done
+		if (levels == 7 && currentLevel == 5) {
+			LoadLevel (8);
+		}
+
 		//If at main menu or Random Event, go to next circuit
 		if (levels == 0 || levels == 7){
 			LoadLevel (++currentLevel);
@@ -94,6 +103,7 @@ public class GameManager : MonoBehaviour {
 			levels = 7;
 			LoadLevel (levels);
 		}
+			
     }
 
     void LoadLevel(int n) {
