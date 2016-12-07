@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour {
 
     public Player player;
     public List<CircuitManager> circuits;
+    public Text subtitle;
 
     //Control Keys not in Axes
     public KeyCode INTERACT = KeyCode.E;
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour {
                 circuits.Add(c);
             }
         }
+        subtitle = GameObject.FindGameObjectWithTag("Subtitle").GetComponent<Text>(); ;
         findPlayer();
     }
 
@@ -57,7 +60,20 @@ public class GameManager : MonoBehaviour {
         if (debug && Input.GetKeyDown(KeyCode.N)) {
 			earnWages ();
 			nextLevel();
+        } else if (debug && Input.GetKeyDown(KeyCode.C)) {
+            showSubtitle("Hllo");
         }
+    }
+
+    public void showSubtitle(string text, float seconds=5f) {
+        subtitle.text = text;
+        StopAllCoroutines();
+        StartCoroutine(HideSubtitleAfter(seconds));
+    }
+
+    IEnumerator HideSubtitleAfter(float seconds) {
+        yield return new WaitForSeconds(seconds);
+        subtitle.text = "";
     }
 
     public void StartGame() {
