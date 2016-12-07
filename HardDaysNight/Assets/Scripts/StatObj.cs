@@ -39,15 +39,11 @@ public class StatObj : MonoBehaviour {
 			curr_value += delta;
 	}
 
+	//Helper Functions
 	public string getName(){
-		return stat_name;
-	}
-
+		return stat_name;	}
 	public int getValue(){
-		return curr_value;
-	}
-
+		return curr_value;	}
 	public int getMaxValue(){
-		return max_value;
-	}
+		return max_value;	}
 }

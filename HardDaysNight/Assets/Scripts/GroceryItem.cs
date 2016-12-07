@@ -14,13 +14,16 @@ public class GroceryItem : MonoBehaviour {
 	public StatObj mySleep;
 	public StatObj myFam;
 
-	bool inCart;
+	public Image check;
+	Color temp;
+
+	bool inCart = false;
 
 	// Use this for initialization
 	void Start () {
-		inCart = false;
+		temp = check.color;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 	}
@@ -29,15 +32,19 @@ public class GroceryItem : MonoBehaviour {
 	public void onClickMe(){
 		//If not in cart, add stat change to each stat
 		if (!inCart) {
-			myHealth.addValue (health_change);
 			mySleep.addValue (sleep_change);
+			myHealth.addValue (health_change);
 			myFam.addValue (family_change);
 			inCart = true;
+			temp.a = 255f;
+			check.color = temp;
 		} else {	//If in cart already,remove & reset stat changes
 			myHealth.addValue (-1 * health_change);
 			mySleep.addValue (-1 * sleep_change);
 			myFam.addValue (-1 * family_change);
 			inCart = false;
+			temp.a = 0f;
+			check.color = temp;
 		}
 	}
 
