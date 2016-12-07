@@ -27,6 +27,6 @@ public class Checkout : MonoBehaviour {
 		old_fam.addValue (new_fam.getValue ());
 
 		//Trigger Next scene
-		GameManager.Instance.TryLevelEnd();
+		GameManager.Instance.nextLevel();
 	}
 }
