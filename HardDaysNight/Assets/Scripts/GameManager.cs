@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour {
     void Update() {
 		//If stats below 0
 		//Trigger Game Over [Missing Art Assets]
+        //Cheat Codes
+        if (debug && Input.GetKeyDown(KeyCode.N)) {
+            nextLevel();
+        }
     }
 
     public void StartGame() {
