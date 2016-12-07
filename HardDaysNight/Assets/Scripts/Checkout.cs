@@ -18,7 +18,6 @@ public class Checkout : MonoBehaviour {
 	}
 
 	public void onClickMe(){
-
 		GameManager.Instance.updatePlayerFam (fam.getValue ());
 		GameManager.Instance.updatePlayerHP (hp.getValue ());
 		GameManager.Instance.updatePlayerHappy (happy.getValue ());
