@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour {
                 circuits.Add(c);
             }
         }
+        findPlayer();
     }
 
     // Update is called once per frame
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour {
 		if (levels == 0 || levels == 7){
 			LoadLevel (++currentLevel);
 			levels = currentLevel;
+            Start();
 		}
 
 		//If finished circuit, load groceries
@@ -85,6 +87,13 @@ public class GameManager : MonoBehaviour {
 
     void LoadLevel(int n) {
         SceneManager.LoadScene(n);
+    }
+
+    private void findPlayer() {
+        GameObject g = GameObject.Find("FPSController");
+        if (g) {
+            player = g.GetComponent<Player>();
+        }
     }
 
     public void TryLevelEnd() {
