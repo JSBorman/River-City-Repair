@@ -1,24 +1,67 @@
 fileFormatVersion: 2
-guid: 0f52e334f061bc246a842a25ace121e3
-timeCreated: 1481051598
-licenseType: Pro
+guid: cb0ab444971d99e42bf05a67c089e743
+timeCreated: 1481122926
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: pCube1
-    100002: pCube2
-    100004: //RootNode
-    400000: pCube1
-    400002: pCube2
-    400004: //RootNode
+    100000: //RootNode
+    100002: pCube1
+    100004: pCube10
+    100006: pCube11
+    100008: pCube12
+    100010: pCube2
+    100012: pCube3
+    100014: pCube4
+    100016: pCube5
+    100018: pCube6
+    100020: pCube8
+    100022: pCube9
+    400000: //RootNode
+    400002: pCube1
+    400004: pCube10
+    400006: pCube11
+    400008: pCube12
+    400010: pCube2
+    400012: pCube3
+    400014: pCube4
+    400016: pCube5
+    400018: pCube6
+    400020: pCube8
+    400022: pCube9
     2300000: pCube1
-    2300002: pCube2
+    2300002: pCube10
+    2300004: pCube11
+    2300006: pCube12
+    2300008: pCube2
+    2300010: pCube3
+    2300012: pCube4
+    2300014: pCube5
+    2300016: pCube6
+    2300018: pCube8
+    2300020: pCube9
     3300000: pCube1
-    3300002: pCube2
+    3300002: pCube10
+    3300004: pCube11
+    3300006: pCube12
+    3300008: pCube2
+    3300010: pCube3
+    3300012: pCube4
+    3300014: pCube5
+    3300016: pCube6
+    3300018: pCube8
+    3300020: pCube9
     4300000: pCube1
     4300002: pCube2
-    6400000: pCube1
-    6400002: pCube2
+    4300004: pCube3
+    4300006: pCube4
+    4300008: pCube5
+    4300010: pCube6
+    4300012: pCube8
+    4300014: pCube9
+    4300016: pCube10
+    4300018: pCube11
+    4300020: pCube12
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -46,7 +89,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 0.1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -80,7 +123,7 @@ ModelImporter:
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
