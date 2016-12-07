@@ -55,7 +55,8 @@ public class GameManager : MonoBehaviour {
 		//Trigger Game Over [Missing Art Assets]
         //Cheat Codes
         if (debug && Input.GetKeyDown(KeyCode.N)) {
-            nextLevel();
+			earnWages ();
+			nextLevel();
         }
     }
 
@@ -118,8 +119,22 @@ public class GameManager : MonoBehaviour {
                 return;
             }
         }
+		earnWages ();
         nextLevel();
     }
+
+	public void earnWages(){
+		Debug.Log ("Earning Wages");
+		int tmpWages = 70;
+
+		if (!halfWages)
+			playerMun = playerMun + tmpWages;
+		else if (halfWages) {
+			playerMun = playerMun + (tmpWages / 2);
+			halfWages = false;
+		}
+		Debug.Log ("Current Earnings: " + playerMun);
+	}
 
 	//Returns the most recent circuit level
 	public int getLevel(){

@@ -7,6 +7,7 @@ public class Checkout : MonoBehaviour {
 	public StatObj happy;
 	public StatObj fam;
 
+	public GroceryManager grocer;
 	// Use this for initialization
 	void Start () {
 	
@@ -18,11 +19,18 @@ public class Checkout : MonoBehaviour {
 	}
 
 	public void onClickMe(){
-		GameManager.Instance.updatePlayerFam (fam.getValue ());
-		GameManager.Instance.updatePlayerHP (hp.getValue ());
-		GameManager.Instance.updatePlayerHappy (happy.getValue ());
 
-		//Trigger Next scene
-		GameManager.Instance.nextLevel();
+		if (grocer.getCost() <= GameManager.Instance.getPlayerMun ()) {
+			GameManager.Instance.updatePlayerFam (fam.getValue ());
+			GameManager.Instance.updatePlayerHP (hp.getValue ());
+			GameManager.Instance.updatePlayerHappy (happy.getValue ());
+			GameManager.Instance.updatePlayerMun (grocer.getCost() * -1);
+
+			//Trigger Next scene
+			GameManager.Instance.nextLevel ();
+		}
+		//Else trigger subtitle
 	}
+
+
 }

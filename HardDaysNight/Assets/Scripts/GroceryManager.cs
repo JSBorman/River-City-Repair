@@ -19,6 +19,7 @@ public class GroceryManager : MonoBehaviour {
 	public GroceryItem XMas2;
 	public GroceryItem XMas3;
 
+	int totalCost;
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +38,6 @@ public class GroceryManager : MonoBehaviour {
 		switch (day) {
 		case 1:	//Monday
 			placeholder.texture = backDrops [0];
-			Debug.Log ("its monday!");
 			fillMonday ();
 			break;
 		case 2:	//Tuesday
@@ -96,4 +96,12 @@ public class GroceryManager : MonoBehaviour {
 		Check3.setValues(5, 5, 5, 5);
 		Check4.setValues(10, 15, 0, 0);
 		Check5.setValues(10, 5, 0, 10);	}
+
+	public void updateCost(int cost){
+		totalCost += cost;
+	}
+
+	public int getCost(){
+		return totalCost;
+	}
 }
