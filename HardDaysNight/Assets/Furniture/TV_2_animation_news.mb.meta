@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a4d920660e848c94d87b4d69454aa2c8
-timeCreated: 1481096282
+guid: 52c2b4b6c37507b45a6e107513f5004a
+timeCreated: 1481104071
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -159,137 +159,7 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Take 001
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 33
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: pCube1
-        weight: 1
-      - path: pCube1/transform2
-        weight: 1
-      - path: pCube2
-        weight: 1
-      - path: pCube3
-        weight: 1
-      - path: pCube4
-        weight: 1
-      - path: pCube4/transform4
-        weight: 1
-      - path: pCube5
-        weight: 1
-      - path: pCube5/transform6
-        weight: 1
-      - path: pCube6
-        weight: 1
-      - path: pCube6/transform8
-        weight: 1
-      - path: pCube7
-        weight: 1
-      - path: pCube7/transform10
-        weight: 1
-      - path: pCube9
-        weight: 1
-      - path: pCube9/transform12
-        weight: 1
-      - path: pCube10
-        weight: 1
-      - path: pCube10/transform14
-        weight: 1
-      - path: pCube11
-        weight: 1
-      - path: pCube11/transform16
-        weight: 1
-      - path: pCube12
-        weight: 1
-      - path: pCube12/transform18
-        weight: 1
-      - path: pCube13
-        weight: 1
-      - path: pCube14
-        weight: 1
-      - path: pCylinder1
-        weight: 1
-      - path: pCylinder2
-        weight: 1
-      - path: pCylinder3
-        weight: 1
-      - path: pCylinder3/transform3
-        weight: 1
-      - path: pCylinder4
-        weight: 1
-      - path: pCylinder4/transform5
-        weight: 1
-      - path: pCylinder5
-        weight: 1
-      - path: pCylinder5/transform7
-        weight: 1
-      - path: pCylinder6
-        weight: 1
-      - path: pCylinder6/transform9
-        weight: 1
-      - path: pCylinder7
-        weight: 1
-      - path: pCylinder7/transform11
-        weight: 1
-      - path: pCylinder8
-        weight: 1
-      - path: pCylinder8/transform13
-        weight: 1
-      - path: pCylinder9
-        weight: 1
-      - path: pCylinder9/transform17
-        weight: 1
-      - path: pCylinder10
-        weight: 1
-      - path: pCylinder10/transform15
-        weight: 1
-      - path: pCylinder11
-        weight: 1
-      - path: pCylinder12
-        weight: 1
-      - path: pCylinder13
-        weight: 1
-      - path: pSphere1
-        weight: 1
-      - path: pSphere1/transform1
-        weight: 1
-      - path: screws:pCube1
-        weight: 1
-      - path: screws:pCube1/screws:transform1
-        weight: 1
-      - path: screws:pCylinder1
-        weight: 1
-      - path: screws:pCylinder1/screws:transform2
-        weight: 1
-      - path: screws:pCylinder2
-        weight: 1
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
